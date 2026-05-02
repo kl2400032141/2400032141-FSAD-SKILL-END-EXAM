@@ -2,17 +2,25 @@
 
 ## Project Structure
 
-hibernate-course-project/
-├── pom.xml
-├── README.md
-└── src/
-    └── main/
-        ├── java/
-        │   └── com/klef/fsad/exam/
-        │       ├── Course.java          ← Entity Class
-        │       └── ClientDemo.java      ← Client Demo Class
-        └── resources/
-            └── hibernate.cfg.xml       ← Hibernate Configuration
+```text
+hibernate-course-project
+│── pom.xml
+│── README.md
+│
+└── src
+    └── main
+        ├── java
+        │   └── com
+        │       └── klef
+        │           └── fsad
+        │               └── exam
+        │                   ├── Course.java
+        │                   └── ClientDemo.java
+        │
+        └── resources
+            └── hibernate.cfg.xml
+```
+
             
 ## Hibernate Course Project
 
