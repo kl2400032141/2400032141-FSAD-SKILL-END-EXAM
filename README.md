@@ -1,8 +1,7 @@
-# Maven Hibernate Course Project
+# 2400032141-FSAD-SKILL-END-EXAM
 
 ## Project Structure
 
-```
 hibernate-course-project/
 ├── pom.xml
 ├── README.md
@@ -14,100 +13,64 @@ hibernate-course-project/
         │       └── ClientDemo.java      ← Client Demo Class
         └── resources/
             └── hibernate.cfg.xml       ← Hibernate Configuration
-```
+            
+## Hibernate Course Project
 
-## Package
-`com.klef.fsad.exam`
+This project is developed as part of the FSAD Skill End Examination.
 
-## Database
-**Name:** `fsadendexam`
+## Technologies Used
 
-## Entity: `Course`
+* Java
+* Hibernate ORM
+* Maven
+* MySQL
+* Eclipse / Spring Tool Suite
 
-| Column             | Type        | Details                  |
-|--------------------|-------------|--------------------------|
-| course_id          | INT (PK)    | Auto-generated           |
-| course_name        | VARCHAR(100)| Course name              |
-| course_description | VARCHAR(500)| Description              |
-| course_date        | DATE        | Start date               |
-| course_status      | VARCHAR(50) | e.g. Active / Upcoming   |
-| course_duration    | INT         | Duration in hours        |
-| course_instructor  | VARCHAR(100)| Instructor name          |
-| course_credits     | INT         | Credit hours             |
+## Project Description
 
-## Operations (in `ClientDemo`)
+The project demonstrates Hibernate integration with MySQL using Maven.
+It performs Course table operations such as:
 
-| Operation | Description                       |
-|-----------|-----------------------------------|
-| I         | Insert a new Course into the DB   |
-| II        | View a Course record by ID        |
+* Insert new course record
+* View course details
+* Automatic table creation using Hibernate
 
----
+## Database Details
 
-## Setup & Run Instructions
+* Database Name: fsadendexam
+* Table Name: courses
 
-### Prerequisites
-- Java 11+
-- Maven 3.6+
-- MySQL Server running locally
+## Project Structure
 
-### Step 1: Create the Database
+src/main/java/com/klef/fsad/exam/
+ Course.java
+ ClientDemo.java
 
-Open your MySQL client and run:
+src/main/resources/
+ hibernate.cfg.xml
 
-```sql
+## How to Run
+
+1. Create MySQL database:
+
 CREATE DATABASE fsadendexam;
-```
 
-### Step 2: Configure DB Credentials
+2. Update username and password in hibernate.cfg.xml
 
-Edit `src/main/resources/hibernate.cfg.xml` and update:
+3. Run:
 
-```xml
-<property name="hibernate.connection.username">root</property>
-<property name="hibernate.connection.password">your_password</property>
-```
+ClientDemo.java
 
-### Step 3: Build the Project
+4. Verify inserted data:
 
-```bash
-mvn clean compile
-```
+USE fsadendexam;
+SELECT * FROM courses;
 
-### Step 4: Run the ClientDemo
+## Output
 
-```bash
-mvn exec:java -Dexec.mainClass="com.klef.fsad.exam.ClientDemo"
-```
+Successful insertion of course records into MySQL database using Hibernate.
 
-Or run `ClientDemo.java` directly from your IDE (Eclipse / IntelliJ).
+## Author
 
----
-
-## Expected Output
-
-```
-========================================
-   Maven Hibernate - Course Operations  
-   Database : fsadendexam               
-========================================
-
---- I. Inserting a new Course ---
-✅ Course inserted successfully with ID: 1
-
---- II. Viewing Course by ID: 1 ---
-✅ Course found:
-Course {
-  ID          : 1
-  Name        : Full Stack Application Development
-  Description : A comprehensive course covering ...
-  Date        : 2024-06-01
-  Status      : Active
-  Duration    : 60 hrs
-  Instructor  : Dr. A. Kumar
-  Credits     : 4
-}
-...
-```
-
-> **Note:** Hibernate will auto-create the `courses` table on first run (`hbm2ddl.auto=update`).
+Vidya Jagabattula
+KL University
